@@ -1,0 +1,17 @@
+version: '3'
+services:
+  # 단일 스테이지 Dockerfile을 사용하는 서비스
+  node-app-single:
+    build:
+      context: .
+      dockerfile: Dockerfile.single
+    ports:
+      - "3000:8080"
+
+  # 멀티스테이지 Dockerfile을 사용하는 서비스
+  node-app-multi:
+    build:
+      context: .
+      dockerfile: Dockerfile.multi
+    ports:
+      - "3001:80"
